@@ -3,10 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from datetime import datetime
 import psycopg2
+import os
 
 app = Flask(__name__)
 # 'Host=localhost;Database=efcore;Username=postgres;Password=api123'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:api123@localhost:5432/todo"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
