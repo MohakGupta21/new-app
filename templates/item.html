@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Item{% endblock title %}
+
+{% block body %} {% if todo!=None %}
+{% block title %}Todo{% endblock title %}
+<div class="container p-4">
+  <h1 class="display-3 text-center m-3">{{todo.title}}</h1>
+  <p class="text-center fw-light h3 mb-3">{{todo.desc}}</p>
+  <p class="text-center fw-light"><b>Item Created:</b> {{todo.date_created}}</p>
+</div>
+{% endif %} {% endblock body %}
